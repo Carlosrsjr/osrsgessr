@@ -23,9 +23,12 @@ GUILD_ID = 1284305558509195325 # <-- REPLACE this with your server ID
 # Intents and bot setup
 # ------------------------
 intents = discord.Intents.default()
+intents.message_content = True  # <- REQUIRED for Discord now
+
 bot = commands.Bot(command_prefix="!", intents=intents)
 tree = bot.tree  # for slash commands
 guild = discord.Object(id=GUILD_ID)
+
 
 # ------------------------
 # Helper functions
@@ -129,3 +132,4 @@ async def on_ready():
 # Run the Bot
 # ------------------------
 bot.run(TOKEN)
+
